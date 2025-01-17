@@ -1,0 +1,35 @@
+<mat-card class="main-container-card">
+  <mat-card-header>
+    <h1>Grades List</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Grade</th>
+          <th>Absences</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (student of students; track trackById) {
+          <tr>
+            <td>{{ student.name }} {{ student.surnames }}</td>
+            <td class="center">{{ student.gender }}</td>
+            @if (student.grade > 5) {
+              <td class="center passed">passed</td>
+            } @else {
+              <td class="center failed">failed</td>
+            }
+            <td class="right">{{ student.absences }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4">No data available.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
