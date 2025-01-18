@@ -15,7 +15,6 @@ export class ListPageComponent implements OnInit {
   ngOnInit(): void {
     this.gradesService.getGrades().subscribe((data) => {
       this.students = data;
-      console.log(this.students);
     });
   }
 }

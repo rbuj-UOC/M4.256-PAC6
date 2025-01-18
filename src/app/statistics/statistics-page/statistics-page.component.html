@@ -1,1 +1,30 @@
-<p>statistics-page works!</p>
+<mat-card class="main-container-card">
+  <mat-card-header>
+    <h1>Statistics</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="chart-container">
+      @defer {
+        <app-resume-data></app-resume-data>
+      } @placeholder {
+        <p>Loading ...</p>
+      }
+    </div>
+
+    <div class="chart-container">
+      @defer (on viewport) {
+        <app-gender></app-gender>
+      } @placeholder {
+        <p>Loading ...</p>
+      }
+    </div>
+
+    <div class="chart-container">
+      @defer (on viewport) {
+        <app-general-results></app-general-results>
+      } @placeholder {
+        <p>Loading ...</p>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>
