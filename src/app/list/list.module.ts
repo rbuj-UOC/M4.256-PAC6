@@ -1,17 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { GradesService } from '../shared/grades.service';
+import { ListPageComponent } from './list-page/list-page.component';
 import { ListRoutingModule } from './list-routing.module';
-import { ListComponent } from './list.component';
-
 
 @NgModule({
-  declarations: [
-    ListComponent
-  ],
+  declarations: [ListPageComponent],
   imports: [
     CommonModule,
-    ListRoutingModule
-  ]
+    ListRoutingModule,
+    MatCardModule,
+    ScrollingModule,
+    HttpClientModule
+  ],
+  providers: [GradesService]
 })
-export class ListModule { }
+export class ListModule {}
