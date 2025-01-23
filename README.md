@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/rbuj-UOC/M4.256-PAC6/actions/workflows/node.js.yml/badge.svg)](https://github.com/rbuj-UOC/M4.256-PAC6/actions/workflows/node.js.yml)
 # M4.256-PAC6
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
