@@ -8,7 +8,7 @@ import { StudentDTO } from './student.dto';
   providedIn: 'root'
 })
 export class GradesService {
-  private csvUrl = 'assets/notas_alumnos-1.csv';
+  private csvUrl = '/notas_alumnos-1.csv';
   constructor(
     private papa: Papa,
     private http: HttpClient

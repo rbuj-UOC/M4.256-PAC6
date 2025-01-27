@@ -4,6 +4,7 @@ import { GradesService } from '../../shared/grades.service';
 
 @Component({
   selector: 'app-general-results',
+  standalone: false,
   templateUrl: './general-results.component.html',
   styleUrl: './general-results.component.scss'
 })

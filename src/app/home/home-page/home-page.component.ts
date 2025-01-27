@@ -4,6 +4,7 @@ import { StudentDTO } from '../../shared/student.dto';
 
 @Component({
   selector: 'app-home-page',
+  standalone: false,
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })

@@ -3,6 +3,7 @@ import { GradesService } from '../../shared/grades.service';
 
 @Component({
   selector: 'app-resume-data',
+  standalone: false,
   templateUrl: './resume-data.component.html',
   styleUrl: './resume-data.component.scss'
 })
