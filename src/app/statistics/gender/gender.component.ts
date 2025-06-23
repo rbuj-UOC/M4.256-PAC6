@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import Chart, { ChartType } from 'chart.js/auto';
 import { GradesService } from '../../shared/grades.service';
 
@@ -9,9 +9,9 @@ import { GradesService } from '../../shared/grades.service';
   styleUrl: './gender.component.scss'
 })
 export class GenderComponent implements OnInit {
-  chart: Chart;
+  private gradesService = inject(GradesService);
 
-  constructor(private gradesService: GradesService) {}
+  chart: Chart;
 
   ngOnInit(): void {
     const start = Date.now();

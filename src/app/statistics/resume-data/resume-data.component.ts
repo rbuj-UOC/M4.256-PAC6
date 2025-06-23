@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { GradesService } from '../../shared/grades.service';
 
 @Component({
@@ -8,11 +8,11 @@ import { GradesService } from '../../shared/grades.service';
   styleUrl: './resume-data.component.scss'
 })
 export class ResumeDataComponent implements OnInit {
+  private gradesService = inject(GradesService);
+
   count: number;
   passed: number;
   failed: number;
-
-  constructor(private gradesService: GradesService) {}
 
   ngOnInit(): void {
     const start = Date.now();

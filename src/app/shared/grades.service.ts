@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Papa } from 'ngx-papaparse';
 import { Observable, catchError, map, of } from 'rxjs';
 import { StudentDTO } from './student.dto';
@@ -8,11 +8,10 @@ import { StudentDTO } from './student.dto';
   providedIn: 'root'
 })
 export class GradesService {
+  private papa = inject(Papa);
+  private http = inject(HttpClient);
+
   private csvUrl = '/notas_alumnos-1.csv';
-  constructor(
-    private papa: Papa,
-    private http: HttpClient
-  ) {}
 
   getGrades(): Observable<StudentDTO[]> {
     return this.http.get(this.csvUrl, { responseType: 'text' }).pipe(

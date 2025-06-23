@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { GradesService } from '../../shared/grades.service';
 import { StudentDTO } from '../../shared/student.dto';
 
@@ -9,9 +9,9 @@ import { StudentDTO } from '../../shared/student.dto';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent implements OnInit {
-  students: StudentDTO[] = [];
+  private gradesService = inject(GradesService);
 
-  constructor(private gradesService: GradesService) {}
+  students: StudentDTO[] = [];
 
   ngOnInit(): void {
     this.gradesService.getGrades().subscribe((data) => {
